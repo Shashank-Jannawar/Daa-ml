@@ -1,22 +1,26 @@
-def fractionalKnapsack(w, val, maxW):
-	arr = []
-	for i in range(len(w)):
-		arr.append((w[i], val[i]))
-	
-	arr.sort(key=lambda x: x[1]/x[0], reverse=True)
-	
-	ans = 0
-	for ele in arr:
-		if ele[0]<maxW:
-			ans += ele[1]
-			maxW -= ele[0]
-		else:
-			ans += (ele[1]/ele[0]) * maxW
-			break
-	return ans
-	
+def fib(n):
+    if n==0 or n==1:
+        return n
+    else:
+        return fib(n-1)+fib(n-2)
+        
+n=int(input("enter the number:-"))
+print(fib(n))
 
-w = [10,20,30]
-val = [60,100,120]
-maxW = 50
-print(fractionalKnapsack(w, val, maxW))
+def fib(n):
+    if n == 0 or n ==1:
+        return n
+    else:
+        i=0
+        num1=0
+        num2=1
+        while(i<n-1):
+            i+=1
+            sum = num1+num2
+            num1=num2
+            num2=sum
+        return sum
+            
+n=int(input("enter the number:-"))
+print(fib(n))
+            
